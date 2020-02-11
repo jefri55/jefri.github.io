@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 11 Feb 2020 14:02:44 +0700</pubDate>
-    <lastBuildDate>Tue, 11 Feb 2020 14:02:44 +0700</lastBuildDate>
+    <pubDate>Tue, 11 Feb 2020 15:12:03 +0700</pubDate>
+    <lastBuildDate>Tue, 11 Feb 2020 15:12:03 +0700</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -39,7 +39,12 @@ Kemudian, hal yang perlu dipersiapkan berikutnya adalah mempersiapkan Server Req
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/installasi-laravel.png&quot; alt=&quot;process-install-laravel&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Hal yang perlu kita selanjutnya adalah memberikan permission untuk folder storage, dengan cara seperti berikut ini :&lt;/p&gt;
+&lt;p&gt;Setelah proses installasi selesai, masuk ke dalam folder &lt;code class=&quot;highlighter-rouge&quot;&gt;blog&lt;/code&gt; yang kita sudah buat sebelumnya&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;	cd /var/www/html/blog/
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Hal yang perlu kita lakukan selanjutnya adalah memberikan permission untuk folder storage, dengan cara seperti berikut ini :&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/permission-laravel.png&quot; alt=&quot;process-install-laravel&quot; /&gt;&lt;/p&gt;
 
@@ -54,44 +59,44 @@ Kemudian, hal yang perlu dipersiapkan berikutnya adalah mempersiapkan Server Req
 
 &lt;ol&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;App&lt;/strong&gt;&lt;br /&gt;
-Direktori inti dari aplikasi yang ingin kita buat, seperti controller, model maupun middleware&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;App&lt;/strong&gt;
+ Direktori inti dari aplikasi yang ingin kita buat, seperti controller, model maupun middleware&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Bootstrap&lt;/strong&gt;&lt;br /&gt;
+    &lt;p&gt;&lt;strong&gt;Bootstrap&lt;/strong&gt;
  Direktori ini berisi cache dari aplikasi yang kita buat&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Config&lt;/strong&gt;&lt;br /&gt;
+    &lt;p&gt;&lt;strong&gt;Config&lt;/strong&gt;
  Direktori ini berisi semua config-config yang digunakan pada aplikasi yang kita gunakan, seperti database, 
  log, cache dll&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Database&lt;/strong&gt;&lt;br /&gt;
+    &lt;p&gt;&lt;strong&gt;Database&lt;/strong&gt;
  Direktori ini berisi, migrations, seeds, factories. yang digunakan untuk membuat struktur table yang akan digunakan di aplikasi kita&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Public&lt;/strong&gt;&lt;br /&gt;
+    &lt;p&gt;&lt;strong&gt;Public&lt;/strong&gt;
  Direktori ini adalah folder yang dapat diakses oleh user, kita melakukan request ke halaman website yang dibuat. Di dalam folder ini juga biasa digunakan untuk menyimpan assets file seperti gambar, css, js, dll.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Resources&lt;/strong&gt;&lt;br /&gt;
+    &lt;p&gt;&lt;strong&gt;Resources&lt;/strong&gt;
  Direktori ini berisi halaman-halaman website yang akan dibuat, juga berisi file mentah seperti &lt;code class=&quot;highlighter-rouge&quot;&gt;less, sass, js&lt;/code&gt; sebelum di compile menjadi file &lt;code class=&quot;highlighter-rouge&quot;&gt;css dan js&lt;/code&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Routes&lt;/strong&gt;&lt;br /&gt;
+    &lt;p&gt;&lt;strong&gt;Routes&lt;/strong&gt;
  Direktori ini berisi file rute untuk mengatur lalu lintas url yang dapat diakses oleh user.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Storages&lt;/strong&gt;&lt;br /&gt;
+    &lt;p&gt;&lt;strong&gt;Storages&lt;/strong&gt;
  Direktori ini berisi hasil kompilasi dari file &lt;code class=&quot;highlighter-rouge&quot;&gt;blade&lt;/code&gt; yang kita buat dalam membuat website.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Tests&lt;/strong&gt;&lt;br /&gt;
+    &lt;p&gt;&lt;strong&gt;Tests&lt;/strong&gt;
  Direktori ini digunakan untuk melakukan testing, dari project yang kita buat.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Vendor&lt;/strong&gt;&lt;br /&gt;
+    &lt;p&gt;&lt;strong&gt;Vendor&lt;/strong&gt;
 Direktori ini berisi library-library yang kita install melalui composer.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;

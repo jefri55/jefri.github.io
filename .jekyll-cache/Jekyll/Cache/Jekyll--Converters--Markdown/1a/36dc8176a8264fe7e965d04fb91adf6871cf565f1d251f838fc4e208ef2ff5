@@ -1,5 +1,0 @@
-I"P<p>Laravel adalah sebuah PHP Framework yang saat ini sedang banyak digunakan.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>&lt;script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2051_RC11/embed_loader.js"&gt;&lt;/script&gt; &lt;script type="text/javascript"&gt; trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"laravel","geo":"","time":"2020-01-01 2020-02-11"},{"keyword":"Symfony","geo":"","time":"2020-01-01 2020-02-11"},{"keyword":"/m/02qgdkj","geo":"","time":"2020-01-01 2020-02-11"},{"keyword":"CakePHP","geo":"","time":"2020-01-01 2020-02-11"},{"keyword":"/m/0cdvjh","geo":"","time":"2020-01-01 2020-02-11"}],"category":0,"property":""}, {"exploreQuery":"date=2020-01-01%202020-02-11&amp;q=laravel,Symfony,%2Fm%2F02qgdkj,CakePHP,%2Fm%2F0cdvjh","guestPath":"https://trends.google.com:443/trends/embed/"}); &lt;/script&gt; 
-</pre></td></tr></tbody></table></code></pre></div></div>
-:ET
