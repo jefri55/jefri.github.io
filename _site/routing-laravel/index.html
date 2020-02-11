@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="/assets/images/logo.png">
+
+<title>Laravel 6 - Routing #2 | JBlog</title>
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Laravel 6 - Routing #2 | JBlog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Laravel 6 - Routing #2" />
+<meta name="author" content="Jefri" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Setelah sebelumnya membahas mengenai Pengenalan dan Installasi Laravel 6. Saya akan membahas part berikutnya yaitu Routing" />
+<meta property="og:description" content="Setelah sebelumnya membahas mengenai Pengenalan dan Installasi Laravel 6. Saya akan membahas part berikutnya yaitu Routing" />
+<link rel="canonical" href="http://localhost:4000/routing-laravel/" />
+<meta property="og:url" content="http://localhost:4000/routing-laravel/" />
+<meta property="og:site_name" content="JBlog" />
+<meta property="og:image" content="http://localhost:4000/assets/images/logo-laravel.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-02-10T00:00:00+07:00" />
+<script type="application/ld+json">
+{"description":"Setelah sebelumnya membahas mengenai Pengenalan dan Installasi Laravel 6. Saya akan membahas part berikutnya yaitu Routing","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"Jefri"},"headline":"Laravel 6 - Routing #2","dateModified":"2020-02-10T00:00:00+07:00","datePublished":"2020-02-10T00:00:00+07:00","image":"http://localhost:4000/assets/images/logo-laravel.jpg","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/routing-laravel/"},"url":"http://localhost:4000/routing-laravel/","author":{"@type":"Person","name":"Jefri"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+
+<link href="/assets/css/main.css" rel="stylesheet">
+
+<script src="/assets/js/jquery.min.js"></script>
+
+</head>
+
+
+<body class="layout-post">
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	</noscript>
+
+
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+    <div class="container pr-0">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+
+        <!-- Begin Menu -->
+
+            <ul class="navbar-nav ml-auto">
+
+                
+                <li class="nav-item">
+                
+                    <a class="nav-link" href="">Home</a>
+                </li>
+
+                <script src="/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+            </ul>
+
+        <!-- End Menu -->
+
+    </div>
+
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+
+<div class="site-content">
+
+<div class="container">
+
+    <!-- Content
+    ================================================== -->
+    <div class="main-content">
+        <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Laravel 6 - Routing #2&url=http://localhost:4000/routing-laravel/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://localhost:4000/routing-laravel/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/routing-laravel/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+                <!-- Post Title -->
+                <h1 class="posttitle">Laravel 6 - Routing #2</h1>
+            </div>
+
+            <!-- Post Featured Image -->
+            
+                
+                <img class="featured-image img-fluid" src="/assets/images/logo-laravel.jpg" alt="Laravel 6 - Routing #2">
+            
+
+            
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                
+                <!-- End Toc -->
+                <p>Setelah sebelumnya membahas mengenai <a href="/pengenalan-laravel/" target="_blank">Pengenalan dan Installasi Laravel 6</a>. Saya akan membahas part berikutnya yaitu <strong>Routing</strong></p>
+
+<p>Fungsi dari routing sendiri untuk mengatur rute lalu lintas dari request-request yang dilakukan oleh user. Berikut dibawah ini adalah contoh dasar, bagaimana menuliskan route dalam laravel :</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">Hello World</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h4 id="default-route-files">Default Route Files</h4>
+<p>Saat melakukan installasi Laravel Framework, Secara otomatis Laravel akan membuat 4 Buah file route yaitu :</p>
+<ol>
+  <li>
+    <p><strong>Api.php</strong><br />
+ Route ini digunakan untuk mendefinisikan rute-rute yang digunakan untuk API</p>
+  </li>
+  <li>
+    <p><strong>Channels.php</strong><br />
+ Route ini digunakan untuk mendefinisikan rute semua <code class="highlighter-rouge">event broadcasting channels</code> di aplikasi yang dibuat</p>
+  </li>
+  <li>
+    <p><strong>Consele.php</strong><br />
+ Route ini digunakan untuk mendefinisikan rute untuk <code class="highlighter-rouge">consule command</code> pada saat kita menggunakan artisan.</p>
+  </li>
+  <li>
+    <p><strong>Web.php</strong><br />
+ Route ini digunakan untuk mendefinisikan rute untuk aplikasi yang kita buat, yang bisa diakses oleh user melalui browser.</p>
+  </li>
+</ol>
+
+<p>Buka file dalam folder <code class="highlighter-rouge">routes/web.php</code> kemudian ketikan perintah dibawah ini :</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">Hello World</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>sehingga isi dari file routes/web.php menjadi</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="dl">'</span><span class="s1">welcome</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nl">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">Hello World</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Kemudian ketikan url pada browser <code class="highlighter-rouge">http://localhost:8000/hello</code> maka akan muncul tampilan sebagai berikut :</p>
+
+<p><img src="/assets/images/tutorial/example-1.png" alt="contoh-route-1" /></p>
+
+<p>Untuk menghubungkan routes yang kita buat dengan controller yang kita miliki dapat dituliskan sebagai berikut :</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/user</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">UserController@index</span><span class="dl">'</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>UserController</strong> Merupakan nama controller yang kita miliki, dan <strong>index</strong> adalah nama method yang akan diakses.</p>
+
+<p>Jika diatas kita telah belajar bagaimana membuat routes dengan metode <code class="highlighter-rouge">GET</code>, routes juga memiliki beberapa metode lainya, yang dapat digunakan sesuai dengan kebutuhan yang diinginkan.</p>
+
+<h4 id="beberapa-metode-routes">Beberapa Metode Routes</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="nx">$uri</span><span class="p">,</span> <span class="nx">$callback</span><span class="p">);</span>
+<span class="nl">Route</span><span class="p">::</span><span class="nx">post</span><span class="p">(</span><span class="nx">$uri</span><span class="p">,</span> <span class="nx">$callback</span><span class="p">);</span>
+<span class="nl">Route</span><span class="p">::</span><span class="nx">put</span><span class="p">(</span><span class="nx">$uri</span><span class="p">,</span> <span class="nx">$callback</span><span class="p">);</span>
+<span class="nl">Route</span><span class="p">::</span><span class="nx">patch</span><span class="p">(</span><span class="nx">$uri</span><span class="p">,</span> <span class="nx">$callback</span><span class="p">);</span>
+<span class="nl">Route</span><span class="p">::</span><span class="k">delete</span><span class="p">(</span><span class="nx">$uri</span><span class="p">,</span> <span class="nx">$callback</span><span class="p">);</span>
+<span class="nl">Route</span><span class="p">::</span><span class="nx">options</span><span class="p">(</span><span class="nx">$uri</span><span class="p">,</span> <span class="nx">$callback</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Jika kita ingin membuat <strong>Routes</strong> yang dapat diakses oleh metode apa pun kita dapat menggunakan Routes seperti dibawah ini :</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="nx">any</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">//</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="routes-redirect">Routes Redirect</h4>
+
+<p>Kita dapat membuat routes, yang dapat mengalihkan url yang akan diakses ke url lain, fungsi ini dapat digunakan, 
+ketika parameter yang dikirimkan tidak sesuai atau halaman yang diakses tidak ditemukan.</p>
+
+<p>Berikut dibawah ini, saya akan membuat contoh routes, ketika kita akan mengakses halaman page 1 otomatis akan dialihkan ke halaman page 2. Tuliskan perintah dibawah ini pada file routes/web.php. setelah itu panggil halaman page1 melalui browser seperti berikut <code class="highlighter-rouge">http://localhost:8000/page1</code></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="nx">redirect</span><span class="p">(</span><span class="dl">'</span><span class="s1">/page1</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">/page2</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nl">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/page2</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+	<span class="k">return</span> <span class="dl">'</span><span class="s1">You are in page 2</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">})</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+            </div>
+
+            <!-- Rating -->
+            
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2020-02-10">10 Feb 2020</time></span>           
+                
+                </small>
+            </p>
+
+            <!-- Post Categories -->
+            <div class="after-post-cats">
+                <ul class="tags mb-4">
+                    
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Laravel">Laravel</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Laravel-6">Laravel 6</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Routing-Laravel-6">Routing Laravel 6</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Tutorial-Laravel-6">Tutorial Laravel 6</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- End Categories -->
+
+            <!-- Post Tags -->
+            <div class="after-post-tags">
+                <ul class="tags">
+                    
+                    
+                </ul>
+            </div>
+            <!-- End Tags -->
+
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="//pengenalan-laravel/"> &laquo; Laravel 6 - Pengenalan dan Installasi #1</a>
+            
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+    </div>
+
+    <br />
+    </div>
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts
+================================================== -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script src="/assets/js/mediumish.js"></script>
+
+
+
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script> 
+
+
+<script id="dsq-count-scr" src="//.disqus.com/count.js"></script>
+
+
+</body>
+</html>

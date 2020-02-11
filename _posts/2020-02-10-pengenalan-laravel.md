@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Pengenalan dan Installasi Laravel 6"
+title:  "Laravel 6 - Pengenalan dan Installasi #1"
 author: Jefri
 categories: [ Laravel, Laravel 6, Tutorial Laravel 6, Installasi Laravel 6 ]
-image: assets/images/12.jpg
+image: assets/images/logo-laravel.jpg
 featured: true
 hidden: true
 ---
