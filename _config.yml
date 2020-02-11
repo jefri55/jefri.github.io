@@ -1,12 +1,12 @@
 # Site
-name: "Mediumish"
-title: "Mediumish"
-description: "Jekyll template, Medium styled, free for bloggers."
+name: "JBlog"
+title: "JBlog"
+description: ""
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
 baseurl: ''
 google_analytics: ''
-disqus: 'demowebsite'
+disqus: ''
 mailchimp-list: ''
 include: ["_pages"]
 permalink: /:title/

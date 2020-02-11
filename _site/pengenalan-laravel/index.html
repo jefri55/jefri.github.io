@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="/assets/images/logo.png">
+
+<title>Pengenalan dan Installasi Laravel 6 | JBlog</title>
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Pengenalan dan Installasi Laravel 6 | JBlog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Pengenalan dan Installasi Laravel 6" />
+<meta name="author" content="Jefri" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Laravel adalah sebuah PHP Framework yang saat ini sedang banyak digunakan, dengan situs resminya di Laravel Website Berdasarkan Google Trends di Bulan Jan - Feb Tahun 2020, Laravel lebih popular daripada beberapa PHP Framework lainya." />
+<meta property="og:description" content="Laravel adalah sebuah PHP Framework yang saat ini sedang banyak digunakan, dengan situs resminya di Laravel Website Berdasarkan Google Trends di Bulan Jan - Feb Tahun 2020, Laravel lebih popular daripada beberapa PHP Framework lainya." />
+<link rel="canonical" href="http://localhost:4000/pengenalan-laravel/" />
+<meta property="og:url" content="http://localhost:4000/pengenalan-laravel/" />
+<meta property="og:site_name" content="JBlog" />
+<meta property="og:image" content="http://localhost:4000/assets/images/12.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-02-10T00:00:00+07:00" />
+<script type="application/ld+json">
+{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"Jefri"},"@type":"BlogPosting","url":"http://localhost:4000/pengenalan-laravel/","headline":"Pengenalan dan Installasi Laravel 6","datePublished":"2020-02-10T00:00:00+07:00","dateModified":"2020-02-10T00:00:00+07:00","image":"http://localhost:4000/assets/images/12.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/pengenalan-laravel/"},"author":{"@type":"Person","name":"Jefri"},"description":"Laravel adalah sebuah PHP Framework yang saat ini sedang banyak digunakan, dengan situs resminya di Laravel Website Berdasarkan Google Trends di Bulan Jan - Feb Tahun 2020, Laravel lebih popular daripada beberapa PHP Framework lainya.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+
+<link href="/assets/css/main.css" rel="stylesheet">
+
+<script src="/assets/js/jquery.min.js"></script>
+
+</head>
+
+
+<body class="layout-post">
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	</noscript>
+
+
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+    <div class="container pr-0">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+
+        <!-- Begin Menu -->
+
+            <ul class="navbar-nav ml-auto">
+
+                
+                <li class="nav-item">
+                
+                    <a class="nav-link" href="">Home</a>
+                </li>
+
+                <script src="/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+            </ul>
+
+        <!-- End Menu -->
+
+    </div>
+
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+
+<div class="site-content">
+
+<div class="container">
+
+    <!-- Content
+    ================================================== -->
+    <div class="main-content">
+        <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Pengenalan dan Installasi Laravel 6&url=http://localhost:4000/pengenalan-laravel/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://localhost:4000/pengenalan-laravel/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/pengenalan-laravel/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+                <!-- Post Title -->
+                <h1 class="posttitle">Pengenalan dan Installasi Laravel 6</h1>
+            </div>
+
+            <!-- Post Featured Image -->
+            
+                
+                <img class="featured-image img-fluid" src="/assets/images/12.jpg" alt="Pengenalan dan Installasi Laravel 6">
+            
+
+            
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                
+                <!-- End Toc -->
+                <p>Laravel adalah sebuah PHP Framework yang saat ini sedang banyak digunakan, dengan situs resminya di <a href="https://laravel.com/" target="_blank">Laravel Website</a>
+Berdasarkan Google Trends di Bulan Jan - Feb Tahun 2020, Laravel lebih popular daripada beberapa PHP Framework lainya.</p>
+
+<p><img src="/assets/images/google-trend-laravel.png" alt="google-trends-laravel" /></p>
+
+<p>Tanpa berbasa-basi pada tahap pengenalan awal ini, saya akan mencoba menjelaskan bagaimana proses installasi dari Laravel. Sebelumnya kita harus menginstall <strong>Web Server</strong> dan <strong>Composer</strong> sebelum melakukan installasi Laravel.
+Kemudian, hal yang perlu dipersiapkan berikutnya adalah mempersiapkan Server Requirements dari Laravel, sebelum melakukan installasi :</p>
+
+<ol>
+  <li><strong>PHP &gt;= 7.2.0</strong></li>
+  <li><strong>BCMath PHP Extension</strong></li>
+  <li><strong>Ctype PHP Extension</strong></li>
+  <li><strong>JSON PHP Extension</strong></li>
+  <li><strong>Mbstring PHP Extension</strong></li>
+  <li><strong>OpenSSL PHP Extension</strong></li>
+  <li><strong>PDO PHP Extension</strong></li>
+  <li><strong>Tokenizer PHP Extension</strong></li>
+  <li><strong>XML PHP Extension</strong></li>
+</ol>
+
+<p>Setelah Proses diatas telah kita siapakan, proses berikutnya adalah menjalankan perintah berikut melalui command prompt :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>composer create-project --prefer-dist laravel/laravel blog
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><img src="/assets/images/installasi-laravel.png" alt="process-install-laravel" /></p>
+
+<p>Hal yang perlu kita selanjutnya adalah memberikan permission untuk folder storage, dengan cara seperti berikut ini :</p>
+
+<p><img src="/assets/images/permission-laravel.png" alt="process-install-laravel" /></p>
+
+<p>setelah set permission folder, kemudian ketikan perintah berikut ini, untuk menampilkan halaman laravel</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>php artisan serve
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><img src="/assets/images/halaman-awal-laravel.png" alt="process-install-laravel" /></p>
+
+<h4 id="informasi-direktori">Informasi Direktori</h4>
+
+<ol>
+  <li>
+    <p><strong>App</strong><br />
+Direktori inti dari aplikasi yang ingin kita buat, seperti controller, model maupun middleware</p>
+  </li>
+  <li>
+    <p><strong>Bootstrap</strong><br />
+ Direktori ini berisi cache dari aplikasi yang kita buat</p>
+  </li>
+  <li>
+    <p><strong>Config</strong><br />
+ Direktori ini berisi semua config-config yang digunakan pada aplikasi yang kita gunakan, seperti database, 
+ log, cache dll</p>
+  </li>
+  <li>
+    <p><strong>Database</strong><br />
+ Direktori ini berisi, migrations, seeds, factories. yang digunakan untuk membuat struktur table yang akan digunakan di aplikasi kita</p>
+  </li>
+  <li>
+    <p><strong>Public</strong><br />
+ Direktori ini adalah folder yang dapat diakses oleh user, kita melakukan request ke halaman website yang dibuat. Di dalam folder ini juga biasa digunakan untuk menyimpan assets file seperti gambar, css, js, dll.</p>
+  </li>
+  <li>
+    <p><strong>Resources</strong><br />
+ Direktori ini berisi halaman-halaman website yang akan dibuat, juga berisi file mentah seperti <code class="highlighter-rouge">less, sass, js</code> sebelum di compile menjadi file <code class="highlighter-rouge">css dan js</code></p>
+  </li>
+  <li>
+    <p><strong>Routes</strong><br />
+ Direktori ini berisi file rute untuk mengatur lalu lintas url yang dapat diakses oleh user.</p>
+  </li>
+  <li>
+    <p><strong>Storages</strong><br />
+ Direktori ini berisi hasil kompilasi dari file <code class="highlighter-rouge">blade</code> yang kita buat dalam membuat website.</p>
+  </li>
+  <li>
+    <p><strong>Tests</strong><br />
+ Direktori ini digunakan untuk melakukan testing, dari project yang kita buat.</p>
+  </li>
+  <li>
+    <p><strong>Vendor</strong><br />
+Direktori ini berisi library-library yang kita install melalui composer.</p>
+  </li>
+</ol>
+
+<p>Demikian tutorial singkat, bagaimana melakukan installasi <code class="highlighter-rouge">Laravevl</code> dan Pengenalan tentang folder-folder yang ada di dalamnya. Mohon Maaf, jika bahasa yang digunakan kurang dapat dimengerti. GBU</p>
+
+
+            </div>
+
+            <!-- Rating -->
+            
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2020-02-10">10 Feb 2020</time></span>           
+                
+                </small>
+            </p>
+
+            <!-- Post Categories -->
+            <div class="after-post-cats">
+                <ul class="tags mb-4">
+                    
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Installasi-Laravel-6">Installasi Laravel 6</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Laravel">Laravel</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Laravel-6">Laravel 6</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Tutorial-Laravel-6">Tutorial Laravel 6</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- End Categories -->
+
+            <!-- Post Tags -->
+            <div class="after-post-tags">
+                <ul class="tags">
+                    
+                    
+                </ul>
+            </div>
+            <!-- End Tags -->
+
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="//powerful-things-markdown-editor/"> &laquo; Powerful things you can do with the Markdown editor</a>
+            
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+    </div>
+
+    <br />
+    </div>
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts
+================================================== -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script src="/assets/js/mediumish.js"></script>
+
+
+
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script> 
+
+
+<script id="dsq-count-scr" src="//.disqus.com/count.js"></script>
+
+
+</body>
+</html>

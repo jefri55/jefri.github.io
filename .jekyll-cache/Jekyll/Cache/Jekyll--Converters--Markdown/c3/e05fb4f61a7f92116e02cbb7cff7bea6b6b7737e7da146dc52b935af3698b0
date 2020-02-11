@@ -1,0 +1,58 @@
+I"œ<p>Laravel adalah sebuah PHP Framework yang saat ini sedang banyak digunakan, dengan situs resminya di <a href="https://laravel.com/" target="_blank">Laravel Website</a>
+Berdasarkan Google Trends di Bulan Jan - Feb Tahun 2020, Laravel lebih popular daripada beberapa PHP Framework lainya.</p>
+
+<p><img src="/assets/images/google-trend-laravel.png" alt="google-trends-laravel" /></p>
+
+<p>Tanpa berbasa-basi pada tahap pengenalan awal ini, saya akan mencoba menjelaskan bagaimana proses installasi dari Laravel. Sebelumnya kita harus menginstall <strong>Web Server</strong> dan <strong>Composer</strong> sebelum melakukan installasi Laravel.
+Kemudian, hal yang perlu dipersiapkan berikutnya adalah mempersiapkan Server Requirements dari Laravel, sebelum melakukan installasi :</p>
+
+<ol>
+  <li><strong>PHP &gt;= 7.2.0</strong></li>
+  <li><strong>BCMath PHP Extension</strong></li>
+  <li><strong>Ctype PHP Extension</strong></li>
+  <li><strong>JSON PHP Extension</strong></li>
+  <li><strong>Mbstring PHP Extension</strong></li>
+  <li><strong>OpenSSL PHP Extension</strong></li>
+  <li><strong>PDO PHP Extension</strong></li>
+  <li><strong>Tokenizer PHP Extension</strong></li>
+  <li><strong>XML PHP Extension</strong></li>
+</ol>
+
+<p>Setelah Proses diatas telah kita siapakan, proses berikutnya adalah menjalankan perintah berikut melalui command prompt :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>composer create-project --prefer-dist laravel/laravel blog
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><img src="/assets/images/installasi-laravel.png" alt="process-install-laravel" /></p>
+
+<p>Hal yang perlu kita selanjutnya adalah memberikan permission untuk folder storage, dengan cara seperti berikut ini :</p>
+
+<p><img src="/assets/images/permission-laravel.png" alt="process-install-laravel" /></p>
+
+<p>setelah set permission folder, kemudian ketikan perintah berikut ini, untuk menampilkan halaman laravel</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>php artisan serve
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><img src="/assets/images/halaman-awal-laravel.png" alt="process-install-laravel" /></p>
+
+<h3 id="informasi-direktori">Informasi Direktori</h3>
+
+<ol>
+  <li>
+    <p><strong>App</strong>
+Direktori inti dari aplikasi yang ingin kita buat, seperti controller, model maupun middleware</p>
+  </li>
+  <li>
+    <p><strong>Bootstrap</strong>
+ Direktori ini berisi cache dari aplikasi yang kita buat</p>
+  </li>
+  <li>
+    <p><strong>Config</strong>
+ Direktori ini berisi semua config-config yang digunakan pada aplikasi yang kita gunakan, seperti database, 
+ log, cache dll</p>
+  </li>
+</ol>
+
+:ET
