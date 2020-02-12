@@ -1,0 +1,172 @@
+I"s?<p>Setelah sebelumnya membahas mengenai <a href="/pengenalan-laravel/" target="_blank">Pengenalan dan Installasi Laravel 6</a>. Saya akan membahas part berikutnya yaitu <strong>Routing</strong></p>
+
+<p>Fungsi dari routing sendiri untuk mengatur rute lalu lintas dari request-request yang dilakukan oleh user. Berikut dibawah ini adalah contoh dasar, bagaimana menuliskan route dalam laravel :</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">Hello World</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h4 id="default-route-files">Default Route Files</h4>
+<p>Saat melakukan installasi Laravel Framework, Secara otomatis Laravel akan membuat 4 Buah file route yaitu :</p>
+<ol>
+  <li>
+    <p><strong>Api.php</strong><br />
+ Route ini digunakan untuk mendefinisikan rute-rute yang digunakan untuk API</p>
+  </li>
+  <li>
+    <p><strong>Channels.php</strong><br />
+ Route ini digunakan untuk mendefinisikan rute semua <code class="highlighter-rouge">event broadcasting channels</code> di aplikasi yang dibuat</p>
+  </li>
+  <li>
+    <p><strong>Consele.php</strong><br />
+ Route ini digunakan untuk mendefinisikan rute untuk <code class="highlighter-rouge">console command</code> pada saat kita menggunakan artisan.</p>
+  </li>
+  <li>
+    <p><strong>Web.php</strong><br />
+ Route ini digunakan untuk mendefinisikan rute untuk aplikasi yang kita buat, yang bisa diakses oleh user melalui browser.</p>
+  </li>
+</ol>
+
+<p>Buka file dalam folder <code class="highlighter-rouge">routes/web.php</code> kemudian ketikan perintah dibawah ini :</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">Hello World</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>sehingga isi dari file <code class="highlighter-rouge">routes/web.php</code> menjadi</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="dl">'</span><span class="s1">welcome</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nl">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">Hello World</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Kemudian ketikan url pada browser <code class="highlighter-rouge">http://localhost:8000/hello</code> maka akan muncul tampilan sebagai berikut :</p>
+
+<p><img src="/assets/images/tutorial/example-1.png" alt="contoh-route-1" /></p>
+
+<p>Untuk menghubungkan routes yang kita buat dengan controller yang kita miliki dapat dituliskan sebagai berikut :</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/user</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">UserController@index</span><span class="dl">'</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>UserController</strong> Merupakan nama controller yang kita miliki, dan <strong>index</strong> adalah nama method yang akan diakses.</p>
+
+<p>Jika diatas kita telah belajar bagaimana membuat routes dengan metode <code class="highlighter-rouge">GET</code>, routes juga memiliki beberapa metode lainya, yang dapat digunakan sesuai dengan kebutuhan yang diinginkan.</p>
+
+<h4 id="beberapa-metode-routes">Beberapa Metode Routes</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="nx">$uri</span><span class="p">,</span> <span class="nx">$callback</span><span class="p">);</span>
+<span class="nl">Route</span><span class="p">::</span><span class="nx">post</span><span class="p">(</span><span class="nx">$uri</span><span class="p">,</span> <span class="nx">$callback</span><span class="p">);</span>
+<span class="nl">Route</span><span class="p">::</span><span class="nx">put</span><span class="p">(</span><span class="nx">$uri</span><span class="p">,</span> <span class="nx">$callback</span><span class="p">);</span>
+<span class="nl">Route</span><span class="p">::</span><span class="nx">patch</span><span class="p">(</span><span class="nx">$uri</span><span class="p">,</span> <span class="nx">$callback</span><span class="p">);</span>
+<span class="nl">Route</span><span class="p">::</span><span class="k">delete</span><span class="p">(</span><span class="nx">$uri</span><span class="p">,</span> <span class="nx">$callback</span><span class="p">);</span>
+<span class="nl">Route</span><span class="p">::</span><span class="nx">options</span><span class="p">(</span><span class="nx">$uri</span><span class="p">,</span> <span class="nx">$callback</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Jika kita ingin membuat <strong>Routes</strong> yang dapat diakses oleh metode apa pun kita dapat menggunakan Routes seperti dibawah ini :</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="nx">any</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">//</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="routes-redirect">Routes Redirect</h4>
+
+<p>Kita dapat membuat routes, yang dapat mengalihkan url yang akan diakses ke url lain, fungsi ini dapat digunakan, 
+ketika parameter yang dikirimkan tidak sesuai atau halaman yang diakses tidak ditemukan.</p>
+
+<p>Berikut dibawah ini, saya akan membuat contoh routes, ketika kita akan mengakses halaman page 1 otomatis akan dialihkan ke halaman page 2. Tuliskan perintah dibawah ini pada file <code class="highlighter-rouge">routes/web.php</code>. setelah itu panggil halaman page1 melalui browser seperti berikut <code class="highlighter-rouge">http://localhost:8000/page1</code> Maka yang akan tampil url <code class="highlighter-rouge">page2</code>.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="nx">redirect</span><span class="p">(</span><span class="dl">'</span><span class="s1">/page1</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">/page2</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nl">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/page2</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+	<span class="k">return</span> <span class="dl">'</span><span class="s1">You are in page 2</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">})</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="routes-view">Routes View</h4>
+
+<p>Berbeda dengan routes-routes diatas, Routes view digunakan untuk menampilkan halaman view secara langsung melalui route. Berikut dibawah ini contoh bagaimana menggunakan Routes View, edit file <code class="highlighter-rouge">routes/web.php</code> 
+edit kode default route dibawah ini :</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="dl">'</span><span class="s1">welcome</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>menjadi berikut ini :</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="nx">view</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">welcome</span><span class="dl">'</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Maka akan muncul halaman tampilan awal laravel yang sama. Saat menampilkan halaman view menggunakan routes, kita juga bisa menambahkan data parameter. Sebagai contoh berikut ini :</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="nx">view</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">welcome</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="o">=&gt;</span><span class="dl">'</span><span class="s1">Budi</span><span class="dl">'</span><span class="p">]);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Kemudian edit file di dalam folder <code class="highlighter-rouge">resources/views/welcome.blade.php</code> pada bagian ini, untuk menampilkan variabel yang telah kita kirimkan melalui routes</p>
+
+<p><img src="/assets/images/tutorial/laravel-route-welcome.png" alt="contoh-route-1" /></p>
+
+<h4 id="routes-parameter">Routes Parameter</h4>
+
+<p>Pada saat membuat routes, kita dapat juga mengirimkan parameter di routes yang akan kita kirimkan, dan melakukan validasi parameter yang akan diterima. Berikut dibawah ini contoh bagaimana membuat routes, dengan variable <code class="highlighter-rouge">name</code>.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello/{name?}</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$name</span> <span class="o">=</span> <span class="dl">''</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">Hello </span><span class="dl">'</span><span class="p">.</span><span class="nx">$name</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Setelah menuliskan perintah diatas, kita akan coba memanggil routes yang kita buat dengan cara berikut ini : <code class="highlighter-rouge">http://localhost:8000/hello/Budi</code> maka akan muncul pada browser text <code class="highlighter-rouge">Hello Budi</code>.</p>
+
+<p>Kita dapat melakukan validasi dari variabel yang dikirimkan, seperti contoh, variabel name harus dalam bentuk <code class="highlighter-rouge">string</code> dan variabel <code class="highlighter-rouge">id</code> harus dalam bentuk numeric dengan contoh seperti berikut ini :</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello/{id}/{name}</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$id</span><span class="p">,</span> <span class="nx">$name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">Hello </span><span class="dl">'</span><span class="p">.</span><span class="nx">$name</span><span class="p">.</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">.</span><span class="nx">$id</span><span class="p">;</span>
+<span class="p">})</span><span class="o">-&gt;</span><span class="nx">where</span><span class="p">([</span><span class="dl">'</span><span class="s1">id</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="dl">'</span><span class="s1">[0-9]+</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="dl">'</span><span class="s1">[a-z]+</span><span class="dl">'</span><span class="p">]);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET

@@ -26,7 +26,7 @@ Saat melakukan installasi Laravel Framework, Secara otomatis Laravel akan membua
 	Route ini digunakan untuk mendefinisikan rute semua `event broadcasting channels` di aplikasi yang dibuat
 
 3. **Consele.php**<br>
-	Route ini digunakan untuk mendefinisikan rute untuk `consule command` pada saat kita menggunakan artisan.
+	Route ini digunakan untuk mendefinisikan rute untuk `console command` pada saat kita menggunakan artisan.
 
 4. **Web.php**<br>
 	Route ini digunakan untuk mendefinisikan rute untuk aplikasi yang kita buat, yang bisa diakses oleh user melalui browser.
@@ -39,7 +39,7 @@ Route::get('hello', function () {
 });
 ```
 
-sehingga isi dari file routes/web.php menjadi 
+sehingga isi dari file `routes/web.php` menjadi 
 
 ```js
 Route::get('/', function () {
@@ -89,7 +89,7 @@ Route::any('/', function () {
 Kita dapat membuat routes, yang dapat mengalihkan url yang akan diakses ke url lain, fungsi ini dapat digunakan, 
 ketika parameter yang dikirimkan tidak sesuai atau halaman yang diakses tidak ditemukan. 
 
-Berikut dibawah ini, saya akan membuat contoh routes, ketika kita akan mengakses halaman page 1 otomatis akan dialihkan ke halaman page 2. Tuliskan perintah dibawah ini pada file routes/web.php. setelah itu panggil halaman page1 melalui browser seperti berikut `http://localhost:8000/page1`
+Berikut dibawah ini, saya akan membuat contoh routes, ketika kita akan mengakses halaman page 1 otomatis akan dialihkan ke halaman page 2. Tuliskan perintah dibawah ini pada file `routes/web.php`. setelah itu panggil halaman page1 melalui browser seperti berikut `http://localhost:8000/page1` Maka yang akan tampil url `page2`. 
 
 ```js
 Route::redirect('/page1', '/page2');
@@ -97,4 +97,51 @@ Route::redirect('/page1', '/page2');
 Route::get('/page2', function(){
 	return 'You are in page 2';
 })
+``` 
+
+#### Routes View
+
+Berbeda dengan routes-routes diatas, Routes view digunakan untuk menampilkan halaman view secara langsung melalui route. Berikut dibawah ini contoh bagaimana menggunakan Routes View, edit file `routes/web.php` 
+edit kode default route dibawah ini : 
+
+```js
+Route::get('/', function () {
+    return view('welcome');
+});
+```
+
+menjadi berikut ini : 
+
+```js
+Route::view('/', 'welcome');
+```
+
+Maka akan muncul halaman tampilan awal laravel yang sama. Saat menampilkan halaman view menggunakan routes, kita juga bisa menambahkan data parameter. Sebagai contoh berikut ini : 
+
+```js
+Route::view('/', 'welcome', ['name'=>'Budi']);
+```
+
+Kemudian edit file di dalam folder `resources/views/welcome.blade.php` pada bagian ini, untuk menampilkan variabel yang telah kita kirimkan melalui routes
+
+![contoh-route-1]({{ site.base_url }}/assets/images/tutorial/laravel-route-welcome.png)
+
+#### Routes Parameter
+
+Pada saat membuat routes, kita dapat juga mengirimkan parameter di routes yang akan kita kirimkan, dan melakukan validasi parameter yang akan diterima. Berikut dibawah ini contoh bagaimana membuat routes, dengan variable `name`. 
+
+```js
+Route::get('hello/{name?}', function ($name = '') {
+    return 'Hello '.$name;
+});
+```
+
+Setelah menuliskan perintah diatas, kita akan coba memanggil routes yang kita buat dengan cara berikut ini : `http://localhost:8000/hello/Budi` maka akan muncul pada browser text `Hello Budi`. 
+
+Kita dapat melakukan validasi dari variabel yang dikirimkan, seperti contoh, variabel name harus dalam bentuk `string` dan variabel `id` harus dalam bentuk numeric dengan contoh seperti berikut ini : 
+
+```js
+Route::get('hello/{id}/{name}', function ($id, $name) {
+    return 'Hello '.$name.' '.$id;
+})->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
 ```
