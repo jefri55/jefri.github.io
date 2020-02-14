@@ -1,110 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<link rel="icon" href="/assets/images/logo.png">
-
-<title>Home | JBlog</title>
-
-<!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Home | JBlog</title>
-<meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Home" />
-<meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
-<meta property="og:site_name" content="JBlog" />
-<link rel="next" href="http://localhost:4000/page2/" />
-<script type="application/ld+json">
-{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"}},"@type":"WebSite","url":"http://localhost:4000/","headline":"Home","name":"JBlog","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
-<link href="/assets/css/screen.css" rel="stylesheet">
-
-<link href="/assets/css/main.css" rel="stylesheet">
-
-<script src="/assets/js/jquery.min.js"></script>
-
-</head>
-
-
-<body class="layout-default">
-	<!-- defer loading of font and font awesome -->
-	<noscript id="deferred-styles">
-		<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-	</noscript>
-
-
-<!-- Begin Menu Navigation
-================================================== -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
-
-    <div class="container pr-0">
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarMediumish">
-
-        <!-- Begin Menu -->
-
-            <ul class="navbar-nav ml-auto">
-
-                
-                <li class="nav-item active">
-                
-                    <a class="nav-link" href="">Home</a>
-                </li>
-
-                <script src="/assets/js/lunr.js"></script>
-
-
-<style>
-    .lunrsearchresult .title {color: #d9230f;}
-    .lunrsearchresult .url {color: silver;}
-    .lunrsearchresult a {display: block; color: #777;}
-    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
-    .lunrsearchresult a:hover .title {text-decoration: underline;}
-</style>
-
-
-<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
-    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
-</form>
-
-<div id="lunrsearchresults">
-    <ul></ul>
-</div>
-
-<script src="/assets/js/lunrsearchengine.js"></script>
-
-            </ul>
-
-        <!-- End Menu -->
-
-    </div>
-
-    </div>
-</nav>
-<!-- End Navigation
-================================================== -->
-
-<div class="site-content">
-
-<div class="container">
-
-    <!-- Content
-    ================================================== -->
-    <div class="main-content">
-        
-
+I"ÐK
 <!-- Featured
 ================================================== -->
 <section class="featured-posts">
@@ -127,7 +21,7 @@
                     <div class="wrapthumbnail">
                         <a href="/routing-laravel/">
                             
-                            <img class="featured-box-img-cover" src="/assets/images/logo-laravel.jpg">
+                            <img class="featured-box-img-cover" src="/assets/images/logo-laravel.jpg" />
                             
                         </a>
                     </div>
@@ -150,11 +44,11 @@
                                 
                                 <span class="meta-footer-thumb">
                                 
-                                <img class="author-thumb" src="https://www.gravatar.com/avatar/?s=250&d=mm&r=x" alt="">
+                                <img class="author-thumb" src="https://www.gravatar.com/avatar/?s=250&amp;d=mm&amp;r=x" alt="" />
                                 
                                 </span>
                                 <span class="author-meta">
-                                <span class="post-name"><a target="_blank" href=""></a></span><br/>
+                                <span class="post-name"><a target="_blank" href=""></a></span><br />
                                 
                                 <span class="post-date">10 Feb 2020</span>
                                 </span>
@@ -186,7 +80,7 @@
                     <div class="wrapthumbnail">
                         <a href="/pengenalan-laravel/">
                             
-                            <img class="featured-box-img-cover" src="/assets/images/logo-laravel.jpg">
+                            <img class="featured-box-img-cover" src="/assets/images/logo-laravel.jpg" />
                             
                         </a>
                     </div>
@@ -208,11 +102,11 @@
                                 
                                 <span class="meta-footer-thumb">
                                 
-                                <img class="author-thumb" src="https://www.gravatar.com/avatar/?s=250&d=mm&r=x" alt="">
+                                <img class="author-thumb" src="https://www.gravatar.com/avatar/?s=250&amp;d=mm&amp;r=x" alt="" />
                                 
                                 </span>
                                 <span class="author-meta">
-                                <span class="post-name"><a target="_blank" href=""></a></span><br/>
+                                <span class="post-name"><a target="_blank" href=""></a></span><br />
                                 
                                 <span class="post-date">10 Feb 2020</span>
                                 </span>
@@ -283,8 +177,6 @@
     </div>
 </section>
 
-
-
 <!-- Posts Index
 ================================================== -->
 <section class="recent-posts">
@@ -309,7 +201,7 @@
                 
 
                     
-                        <img class="img-fluid" src="/assets/images/16.jpg" alt="Powerful things you can do with the Markdown editor"> 
+                        <img class="img-fluid" src="/assets/images/16.jpg" alt="Powerful things you can do with the Markdown editor" /> 
                     
 
                 
@@ -327,11 +219,11 @@
                 
                 <span class="meta-footer-thumb">
                 
-                <img class="author-thumb" src="https://www.gravatar.com/avatar/?s=250&d=mm&r=x" alt="">
+                <img class="author-thumb" src="https://www.gravatar.com/avatar/?s=250&amp;d=mm&amp;r=x" alt="" />
                 
                 </span>
                 <span class="author-meta">
-                <span class="post-name"><a target="_blank" href=""></a></span><br/>
+                <span class="post-name"><a target="_blank" href=""></a></span><br />
                 
                 <span class="post-date">12 Jun 2018</span>
                 </span>
@@ -355,7 +247,7 @@
                 
 
                     
-                        <img class="img-fluid" src="/assets/images/17.jpg" alt="The first mass-produced book to deviate from a rectilinear format"> 
+                        <img class="img-fluid" src="/assets/images/17.jpg" alt="The first mass-produced book to deviate from a rectilinear format" /> 
                     
 
                 
@@ -373,11 +265,11 @@
                 
                 <span class="meta-footer-thumb">
                 
-                <img class="author-thumb" src="https://www.gravatar.com/avatar/?s=250&d=mm&r=x" alt="">
+                <img class="author-thumb" src="https://www.gravatar.com/avatar/?s=250&amp;d=mm&amp;r=x" alt="" />
                 
                 </span>
                 <span class="author-meta">
-                <span class="post-name"><a target="_blank" href=""></a></span><br/>
+                <span class="post-name"><a target="_blank" href=""></a></span><br />
                 
                 <span class="post-date">12 Jun 2018</span>
                 </span>
@@ -401,7 +293,7 @@
                 
 
                     
-                        <img class="img-fluid" src="/assets/images/3.jpg" alt="Education must also train one for quick, resolute and effective thinking."> 
+                        <img class="img-fluid" src="/assets/images/3.jpg" alt="Education must also train one for quick, resolute and effective thinking." /> 
                     
 
                 
@@ -420,11 +312,11 @@
                 
                 <span class="meta-footer-thumb">
                 
-                <img class="author-thumb" src="https://www.gravatar.com/avatar/?s=250&d=mm&r=x" alt="">
+                <img class="author-thumb" src="https://www.gravatar.com/avatar/?s=250&amp;d=mm&amp;r=x" alt="" />
                 
                 </span>
                 <span class="author-meta">
-                <span class="post-name"><a target="_blank" href=""></a></span><br/>
+                <span class="post-name"><a target="_blank" href=""></a></span><br />
                 
                 <span class="post-date">12 Jun 2018</span>
                 </span>
@@ -448,7 +340,7 @@
                 
 
                     
-                        <img class="img-fluid" src="/assets/images/15.jpg" alt="Accumulated experience of social living"> 
+                        <img class="img-fluid" src="/assets/images/15.jpg" alt="Accumulated experience of social living" /> 
                     
 
                 
@@ -467,11 +359,11 @@
                 
                 <span class="meta-footer-thumb">
                 
-                <img class="author-thumb" src="https://www.gravatar.com/avatar/?s=250&d=mm&r=x" alt="">
+                <img class="author-thumb" src="https://www.gravatar.com/avatar/?s=250&amp;d=mm&amp;r=x" alt="" />
                 
                 </span>
                 <span class="author-meta">
-                <span class="post-name"><a target="_blank" href=""></a></span><br/>
+                <span class="post-name"><a target="_blank" href=""></a></span><br />
                 
                 <span class="post-date">12 Jun 2018</span>
                 </span>
@@ -495,7 +387,7 @@
                 
 
                     
-                        <img class="img-fluid" src="/assets/images/2.jpg" alt="About Bundler"> 
+                        <img class="img-fluid" src="/assets/images/2.jpg" alt="About Bundler" /> 
                     
 
                 
@@ -525,11 +417,11 @@
                 
                 <span class="meta-footer-thumb">
                 
-                <img class="author-thumb" src="https://www.gravatar.com/avatar/?s=250&d=mm&r=x" alt="">
+                <img class="author-thumb" src="https://www.gravatar.com/avatar/?s=250&amp;d=mm&amp;r=x" alt="" />
                 
                 </span>
                 <span class="author-meta">
-                <span class="post-name"><a target="_blank" href=""></a></span><br/>
+                <span class="post-name"><a target="_blank" href=""></a></span><br />
                 
                 <span class="post-date">12 May 2018</span>
                 </span>
@@ -553,7 +445,7 @@
                 
 
                     
-                        <img class="img-fluid" src="/assets/images/5.jpg" alt="We all wait for summer"> 
+                        <img class="img-fluid" src="/assets/images/5.jpg" alt="We all wait for summer" /> 
                     
 
                 
@@ -583,11 +475,11 @@
                 
                 <span class="meta-footer-thumb">
                 
-                <img class="author-thumb" src="https://www.gravatar.com/avatar/?s=250&d=mm&r=x" alt="">
+                <img class="author-thumb" src="https://www.gravatar.com/avatar/?s=250&amp;d=mm&amp;r=x" alt="" />
                 
                 </span>
                 <span class="author-meta">
-                <span class="post-name"><a target="_blank" href=""></a></span><br/>
+                <span class="post-name"><a target="_blank" href=""></a></span><br />
                 
                 <span class="post-date">12 Jan 2018</span>
                 </span>
@@ -634,28 +526,4 @@
 </span>
 </div>
 
-
-    </div>
-
-    <br />
-    </div>
-
-</div> <!-- /.site-content -->
-
-<!-- Scripts
-================================================== -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
-<script src="/assets/js/mediumish.js"></script>
-
-
-
-<script src="/assets/js/ie10-viewport-bug-workaround.js"></script> 
-
-
-
-</body>
-</html>
+:ET

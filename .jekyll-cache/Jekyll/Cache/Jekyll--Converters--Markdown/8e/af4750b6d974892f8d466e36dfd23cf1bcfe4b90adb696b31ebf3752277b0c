@@ -1,4 +1,4 @@
-I"êO<p>Setelah sebelumnya membahas mengenai <a href="/pengenalan-laravel/" target="_blank">Pengenalan dan Installasi Laravel 6</a>. Saya akan membahas part berikutnya yaitu <strong>Routing</strong></p>
+I"§Q<p>Setelah sebelumnya membahas mengenai <a href="/pengenalan-laravel/" target="_blank">Pengenalan dan Installasi Laravel 6</a>. Saya akan membahas part berikutnya yaitu <strong>Routing</strong></p>
 
 <p>Fungsi dari routing sendiri untuk mengatur rute lalu lintas dari request-request yang dilakukan oleh user. Berikut dibawah ini adalah contoh dasar, bagaimana menuliskan route dalam laravel :</p>
 
@@ -198,5 +198,7 @@ edit kode default route dibawah ini :</p>
 halaman <code class="highlighter-rouge">hello</code> dengan parameter <code class="highlighter-rouge">id</code> dan <code class="highlighter-rouge">name</code> yang dikirimkan.</p>
 
 <h4 id="routes-group">Routes Group</h4>
+
+<p>Routes group digunakan untuk mengelompokan routes yang kita buat. Biasa routes ini digunakan untuk memberikan <code class="highlighter-rouge">middleware</code>, <code class="highlighter-rouge">prefix</code>, dll di beberapa route yang kita pilih. Untuk contoh kasusnya seperti <code class="highlighter-rouge">middleware</code> auth yaitu fungsinya untuk melakukan pengecekan terlebih dahulu sebelum user mengakses route yang diinginkan.</p>
 
 :ET

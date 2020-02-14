@@ -376,6 +376,46 @@ halaman <code class="highlighter-rouge">hello</code> dengan parameter <code clas
 
 <h4 id="routes-group">Routes Group</h4>
 
+<p>Routes group digunakan untuk mengelompokan routes yang kita buat. Biasa routes ini digunakan untuk memberikan <code class="highlighter-rouge">middleware</code>, <code class="highlighter-rouge">prefix</code>, dll di beberapa route yang kita pilih. Untuk contoh kasusnya seperti <code class="highlighter-rouge">middleware</code> auth yaitu fungsinya untuk melakukan pengecekan terlebih dahulu sebelum user mengakses route yang diinginkan.</p>
+
+<p>Berikut dibawah ini bagaimana penulisan dari <code class="highlighter-rouge">Route Group</code> :</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="nx">group</span><span class="p">([</span><span class="dl">'</span><span class="s1">prefix</span><span class="dl">'</span><span class="o">=&gt;</span><span class="dl">'</span><span class="s1">home</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">as</span><span class="dl">'</span><span class="o">=&gt;</span><span class="dl">'</span><span class="s1">home</span><span class="dl">'</span><span class="p">],</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nl">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="dl">'</span><span class="s1">Default Home</span><span class="dl">'</span><span class="p">;</span>
+    <span class="p">});</span>
+
+    <span class="nl">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/dashboard</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="dl">'</span><span class="s1">Home Dashboard</span><span class="dl">'</span><span class="p">;</span>
+    <span class="p">});</span>
+<span class="p">});</span><span class="nl">Route</span><span class="p">::</span><span class="nx">group</span><span class="p">([</span><span class="dl">'</span><span class="s1">prefix</span><span class="dl">'</span><span class="o">=&gt;</span><span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">as</span><span class="dl">'</span><span class="o">=&gt;</span><span class="dl">'</span><span class="s1">user.</span><span class="dl">'</span><span class="p">],</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nl">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="dl">'</span><span class="s1">Default User</span><span class="dl">'</span><span class="p">;</span>
+    <span class="p">})</span>
+
+    <span class="nx">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">profile</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="dl">'</span><span class="s1">Profile User</span><span class="dl">'</span><span class="p">;</span>
+    <span class="p">})</span>
+<span class="p">})</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
 
             </div>
 

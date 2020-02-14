@@ -1,4 +1,4 @@
-I"4A<p>Setelah sebelumnya membahas mengenai <a href="/pengenalan-laravel/" target="_blank">Pengenalan dan Installasi Laravel 6</a>. Saya akan membahas part berikutnya yaitu <strong>Routing</strong></p>
+I"$Y<p>Setelah sebelumnya membahas mengenai <a href="/pengenalan-laravel/" target="_blank">Pengenalan dan Installasi Laravel 6</a>. Saya akan membahas part berikutnya yaitu <strong>Routing</strong></p>
 
 <p>Fungsi dari routing sendiri untuk mengatur rute lalu lintas dari request-request yang dilakukan oleh user. Berikut dibawah ini adalah contoh dasar, bagaimana menuliskan route dalam laravel :</p>
 
@@ -176,6 +176,51 @@ edit kode default route dibawah ini :</p>
 
 <h4 id="routes-names">Routes Names</h4>
 
-<p>Kita dapat memberikan nama atau alias untuk route yang kita buat, agar lebih mudah ketika kita ingin memanggil route tersebut.</p>
+<p>Kita dapat memberikan nama atau alias untuk route yang kita buat, agar lebih mudah ketika kita ingin memanggil route tersebut. Sebagai contoh saya akan memberikan nama untuk route dibawah ini :</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello/{id}/{name}</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$id</span><span class="p">,</span> <span class="nx">$name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">Hello </span><span class="dl">'</span><span class="p">.</span><span class="nx">$name</span><span class="p">.</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">.</span><span class="nx">$id</span><span class="p">;</span>
+<span class="p">})</span><span class="o">-&gt;</span><span class="nx">where</span><span class="p">([</span><span class="dl">'</span><span class="s1">id</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="dl">'</span><span class="s1">[0-9]+</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="dl">'</span><span class="s1">[a-z]+</span><span class="dl">'</span><span class="p">])</span><span class="o">-&gt;</span><span class="nx">name</span><span class="p">(</span><span class="dl">'</span><span class="s1">salam</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nl">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">page1/{id}/{name}</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$id</span><span class="p">,</span> <span class="nx">$name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">redirect</span><span class="p">()</span><span class="o">-&gt;</span><span class="nx">route</span><span class="p">(</span><span class="dl">'</span><span class="s1">salam</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">id</span><span class="dl">'</span><span class="o">=&gt;</span><span class="nx">$id</span><span class="p">,</span> <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="o">=&gt;</span><span class="nx">$name</span><span class="p">]);</span>
+<span class="p">})</span><span class="o">-&gt;</span><span class="nx">where</span><span class="p">([</span><span class="dl">'</span><span class="s1">id</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="dl">'</span><span class="s1">[0-9]+</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="dl">'</span><span class="s1">[a-z]+</span><span class="dl">'</span><span class="p">]);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>ketika saya akan mengakses halaman <code class="highlighter-rouge">http://localhost:8000/page1/1/budi</code> maka akan secara otomatis akan menampilkan 
+halaman <code class="highlighter-rouge">hello</code> dengan parameter <code class="highlighter-rouge">id</code> dan <code class="highlighter-rouge">name</code> yang dikirimkan.</p>
+
+<h4 id="routes-group">Routes Group</h4>
+
+<p>Routes group digunakan untuk mengelompokan routes yang kita buat. Biasa routes ini digunakan untuk memberikan <code class="highlighter-rouge">middleware</code>, <code class="highlighter-rouge">prefix</code>, dll di beberapa route yang kita pilih. Untuk contoh kasusnya seperti <code class="highlighter-rouge">middleware</code> auth yaitu fungsinya untuk melakukan pengecekan terlebih dahulu sebelum user mengakses route yang diinginkan.</p>
+
+<p>Berikut dibawah ini bagaimana penulisan dari <code class="highlighter-rouge">Route Group</code> :</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="nx">group</span><span class="p">([</span><span class="dl">'</span><span class="s1">prefix</span><span class="dl">'</span><span class="o">=&gt;</span><span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">as</span><span class="dl">'</span><span class="o">=&gt;</span><span class="dl">'</span><span class="s1">user.</span><span class="dl">'</span><span class="p">],</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nl">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="dl">'</span><span class="s1">Default User</span><span class="dl">'</span><span class="p">;</span>
+    <span class="p">})</span>
+
+    <span class="nx">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">profile</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="dl">'</span><span class="s1">Profile User</span><span class="dl">'</span><span class="p">;</span>
+    <span class="p">})</span>
+<span class="p">})</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 :ET

@@ -169,8 +169,25 @@ halaman `hello` dengan parameter `id` dan `name` yang dikirimkan.
 
 #### Routes Group
 
+Routes group digunakan untuk mengelompokan routes yang kita buat. Biasa routes ini digunakan untuk memberikan `middleware`, `prefix`, dll di beberapa route yang kita pilih. Untuk contoh kasusnya seperti `middleware` auth yaitu fungsinya untuk melakukan pengecekan terlebih dahulu sebelum user mengakses route yang diinginkan. 
 
+Berikut dibawah ini bagaimana penulisan dari `Route Group` : 
 
+```js
+Route::group(['prefix'=>'home', 'as'=>'home'], function(){
+    Route::get('/', function(){
+        return 'Default Home';
+    });
+
+    Route::get('/dashboard', function(){
+        return 'Home Dashboard';
+    });
+});
+```
+
+Dari contoh penulisan Route Group diatas, kita dapat memanggil route di dalam route `home` sebagai contoh berikut `http://localhost:8000/home` maka secara otomatis akan menampilkan `Default Home` 
+
+Sedangkan untuk URL `http://localhost/dashboard` akan menampilkan halaman `Home Dashboard`.
 
 
 
