@@ -138,10 +138,39 @@ Route::get('hello/{name?}', function ($name = '') {
 
 Setelah menuliskan perintah diatas, kita akan coba memanggil routes yang kita buat dengan cara berikut ini : `http://localhost:8000/hello/Budi` maka akan muncul pada browser text `Hello Budi`. 
 
-Kita dapat melakukan validasi dari variabel yang dikirimkan, seperti contoh, variabel name harus dalam bentuk `string` dan variabel `id` harus dalam bentuk numeric dengan contoh seperti berikut ini : 
+Kita dapat melakukan validasi dari variabel yang dikirimkan, seperti contoh, variabel name harus dalam bentuk `string` atau huruf dan variabel `id` harus dalam bentuk numeric dengan contoh seperti berikut ini : 
 
 ```js
 Route::get('hello/{id}/{name}', function ($id, $name) {
     return 'Hello '.$name.' '.$id;
 })->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
 ```
+
+Sehingga hasil yang muncul akan seperti dibawah ini. Jika kita menginputkan id dengan huruf, maka akan muncul tampilan `404 Not Found`
+
+![contoh-route-1]({{ site.base_url }}/assets/images/tutorial/example-2.png)
+
+#### Routes Names
+
+Kita dapat memberikan nama atau alias untuk route yang kita buat, agar lebih mudah ketika kita ingin memanggil route tersebut. Sebagai contoh saya akan memberikan nama untuk route dibawah ini : 
+
+```js
+Route::get('hello/{id}/{name}', function ($id, $name) {
+    return 'Hello '.$name.' '.$id;
+})->where(['id' => '[0-9]+', 'name' => '[a-z]+'])->name('salam');
+
+Route::get('page1/{id}/{name}', function($id, $name) {
+    return redirect()->route('salam', ['id'=>$id, 'name'=>$name]);
+})->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
+```
+
+ketika saya akan mengakses halaman `http://localhost:8000/page1/1/budi` maka akan secara otomatis akan menampilkan 
+halaman `hello` dengan parameter `id` dan `name` yang dikirimkan.
+
+#### Routes Group
+
+
+
+
+
+
