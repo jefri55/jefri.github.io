@@ -23,7 +23,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-02-10T00:00:00+07:00" />
 <script type="application/ld+json">
-{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"Jefri"},"@type":"BlogPosting","url":"http://localhost:4000/routing-laravel/","headline":"Laravel 6 - Routing #2","datePublished":"2020-02-10T00:00:00+07:00","dateModified":"2020-02-10T00:00:00+07:00","image":"http://localhost:4000/assets/images/logo-laravel.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/routing-laravel/"},"author":{"@type":"Person","name":"Jefri"},"description":"Setelah sebelumnya membahas mengenai Pengenalan dan Installasi Laravel 6. Saya akan membahas part berikutnya yaitu Routing","@context":"https://schema.org"}</script>
+{"description":"Setelah sebelumnya membahas mengenai Pengenalan dan Installasi Laravel 6. Saya akan membahas part berikutnya yaitu Routing","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"Jefri"},"headline":"Laravel 6 - Routing #2","dateModified":"2020-02-10T00:00:00+07:00","datePublished":"2020-02-10T00:00:00+07:00","image":"http://localhost:4000/assets/images/logo-laravel.jpg","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/routing-laravel/"},"url":"http://localhost:4000/routing-laravel/","author":{"@type":"Person","name":"Jefri"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -389,14 +389,6 @@ halaman <code class="highlighter-rouge">hello</code> dengan parameter <code clas
 7
 8
 9
-10
-11
-12
-13
-14
-15
-16
-17
 </pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="p">::</span><span class="nx">group</span><span class="p">([</span><span class="dl">'</span><span class="s1">prefix</span><span class="dl">'</span><span class="o">=&gt;</span><span class="dl">'</span><span class="s1">home</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">as</span><span class="dl">'</span><span class="o">=&gt;</span><span class="dl">'</span><span class="s1">home</span><span class="dl">'</span><span class="p">],</span> <span class="kd">function</span><span class="p">(){</span>
     <span class="nl">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
         <span class="k">return</span> <span class="dl">'</span><span class="s1">Default Home</span><span class="dl">'</span><span class="p">;</span>
@@ -405,16 +397,13 @@ halaman <code class="highlighter-rouge">hello</code> dengan parameter <code clas
     <span class="nl">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/dashboard</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
         <span class="k">return</span> <span class="dl">'</span><span class="s1">Home Dashboard</span><span class="dl">'</span><span class="p">;</span>
     <span class="p">});</span>
-<span class="p">});</span><span class="nl">Route</span><span class="p">::</span><span class="nx">group</span><span class="p">([</span><span class="dl">'</span><span class="s1">prefix</span><span class="dl">'</span><span class="o">=&gt;</span><span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">as</span><span class="dl">'</span><span class="o">=&gt;</span><span class="dl">'</span><span class="s1">user.</span><span class="dl">'</span><span class="p">],</span> <span class="kd">function</span><span class="p">(){</span>
-    <span class="nl">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-        <span class="k">return</span> <span class="dl">'</span><span class="s1">Default User</span><span class="dl">'</span><span class="p">;</span>
-    <span class="p">})</span>
-
-    <span class="nx">Route</span><span class="p">::</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">profile</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-        <span class="k">return</span> <span class="dl">'</span><span class="s1">Profile User</span><span class="dl">'</span><span class="p">;</span>
-    <span class="p">})</span>
-<span class="p">})</span>
+<span class="p">});</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Dari contoh penulisan Route Group diatas, kita dapat memanggil route di dalam route <code class="highlighter-rouge">home</code> sebagai contoh berikut <code class="highlighter-rouge">http://localhost:8000/home</code> maka secara otomatis akan menampilkan <code class="highlighter-rouge">Default Home</code></p>
+
+<p>Sedangkan untuk URL <code class="highlighter-rouge">http://localhost/dashboard</code> akan menampilkan halaman <code class="highlighter-rouge">Home Dashboard</code>.
+Demikianlah tutorial yang singkat mengenai <code class="highlighter-rouge">Routing Laravel</code> mohon maaf, jika contoh dan penulisan sulit dimengerti :(.</p>
 
 
             </div>
@@ -469,6 +458,8 @@ halaman <code class="highlighter-rouge">hello</code> dengan parameter <code clas
             
             <a class="prev d-block col-md-6" href="//pengenalan-laravel/"> &laquo; Laravel 6 - Pengenalan dan Installasi #1</a>
             
+            
+            <a class="next d-block col-md-6 text-lg-right" href="//laravel-middleware/">Laravel 6 - Middleware &raquo; </a>
             
             <div class="clearfix"></div>
             </div>

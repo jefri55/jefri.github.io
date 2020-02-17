@@ -1,0 +1,3 @@
+I"G<p>Laravel Middleware adalah sebuah mekanisme yang digunakan untuk melakukan validasi dan filter dari setiap <code class="highlighter-rouge">request</code> http yang dikirimkan oleh user. Contoh Middleware yang paling sering dibuat adalah Middleware untuk melakukan pengecekan apakah user telah login atau hak akses user.</p>
+
+:ET

@@ -188,6 +188,5 @@ Route::group(['prefix'=>'home', 'as'=>'home'], function(){
 Dari contoh penulisan Route Group diatas, kita dapat memanggil route di dalam route `home` sebagai contoh berikut `http://localhost:8000/home` maka secara otomatis akan menampilkan `Default Home` 
 
 Sedangkan untuk URL `http://localhost/dashboard` akan menampilkan halaman `Home Dashboard`.
-
-
+Demikianlah tutorial yang singkat mengenai `Routing Laravel` mohon maaf, jika contoh dan penulisan sulit dimengerti :(.
 
