@@ -1,0 +1,98 @@
+I"ÿ<p>Laravel Middleware adalah sebuah mekanisme yang digunakan untuk melakukan validasi dan filter dari setiap <code class="highlighter-rouge">request</code> http yang dikirimkan oleh user. Contoh Middleware yang paling sering dibuat adalah Middleware untuk melakukan pengecekan apakah user telah login atau hak akses user.</p>
+
+<h4 id="membuat-middleware">Membuat Middleware</h4>
+
+<p>Untuk membuat sebuah middleware, gunakan <code class="highlighter-rouge">command artisan</code> seperti berikut ini :</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">php</span> <span class="nx">artisan</span> <span class="nx">make</span><span class="p">:</span><span class="nx">middleware</span> <span class="nx">CheckAge</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Command diatas, akan membuat sebuah file baru di dalam folder <code class="highlighter-rouge">app/Http/Middleware</code> dengan nama <code class="highlighter-rouge">CheckAge</code>. 
+<code class="highlighter-rouge">middleware</code> ini digunakan untuk membatasi parameter <code class="highlighter-rouge">Age</code> yang dikirimkan melalui routes, sebelum mengakses <code class="highlighter-rouge">request</code>. Jika nilai yang dikirimkan kurang dari 200, maka akan diredirect ke halaman welcome.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?php</span>
+
+<span class="kn">namespace</span> <span class="nn">App\Http\Middleware</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nn">Closure</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">CheckAge</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">handle</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nx">Closure</span> <span class="nv">$next</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">age</span> <span class="o">&lt;=</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">redirect</span><span class="p">(</span><span class="s1">'welcome'</span><span class="p">);</span>
+        <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="nv">$next</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="mendaftarkan-middleware">Mendaftarkan Middleware</h4>
+
+<p>Setelah selesai membuat <code class="highlighter-rouge">middleware</code> diatas, langkah selanjutnya yang perlu dilakukan adalah mendaftarkan middleware yang dibuat ke dalam file konfigurasi <code class="highlighter-rouge">app/Http/Kernel</code>. Ada beberapa cara untuk mendaftarkan middleware yang dibuat :</p>
+
+<h5 id="1-middleware-untuk-routes">1. Middleware Untuk Routes</h5>
+
+<p>Untuk membuat middleware yang digunakan untuk menghandle <code class="highlighter-rouge">request</code> http di routes, dengan menuliskan nama middleware dan <code class="highlighter-rouge">path</code> middleware di dalam variable array <code class="highlighter-rouge">$routeMiddleware</code> seperti berikut ini :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre>	<span class="k">protected</span> <span class="nv">$routeMiddleware</span> <span class="o">=</span> <span class="p">[</span>
+	    <span class="s1">'checkAge'</span> <span class="o">=&gt;</span> <span class="nx">\App\Http\Middleware\CheckAge</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+	    <span class="s1">'auth.basic'</span> <span class="o">=&gt;</span> <span class="nx">\Illuminate\Auth\Middleware\AuthenticateWithBasicAuth</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+	    <span class="s1">'bindings'</span> <span class="o">=&gt;</span> <span class="nx">\Illuminate\Routing\Middleware\SubstituteBindings</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+	    <span class="s1">'cache.headers'</span> <span class="o">=&gt;</span> <span class="nx">\Illuminate\Http\Middleware\SetCacheHeaders</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+	    <span class="s1">'can'</span> <span class="o">=&gt;</span> <span class="nx">\Illuminate\Auth\Middleware\Authorize</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+	    <span class="s1">'guest'</span> <span class="o">=&gt;</span> <span class="nx">\App\Http\Middleware\RedirectIfAuthenticated</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+	    <span class="s1">'password.confirm'</span> <span class="o">=&gt;</span> <span class="nx">\Illuminate\Auth\Middleware\RequirePassword</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+	    <span class="s1">'signed'</span> <span class="o">=&gt;</span> <span class="nx">\Illuminate\Routing\Middleware\ValidateSignature</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+	    <span class="s1">'throttle'</span> <span class="o">=&gt;</span> <span class="nx">\Illuminate\Routing\Middleware\ThrottleRequests</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+	    <span class="s1">'verified'</span> <span class="o">=&gt;</span> <span class="nx">\Illuminate\Auth\Middleware\EnsureEmailIsVerified</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+	<span class="p">];</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+:ET
