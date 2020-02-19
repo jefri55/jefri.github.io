@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Laravel 6 - Middleware"
+title:  "Laravel 6 - Middleware #3"
 author: Jefri
 categories: [ Laravel, Laravel 6, Tutorial Laravel 6, Laravel 6 Middleware ]
 image: assets/images/logo-laravel.jpg

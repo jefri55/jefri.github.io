@@ -1,0 +1,80 @@
+I"¦<p>Controller adalah sebuah kelas yang fungsinya untuk menghandle permintaan-permintaan yang dilakukan oleh user dengan data yang akan ditampilkan dari database, dan juga mengatur halaman apa yang akan ditampilkan.</p>
+
+<h4 id="membuat-controller">Membuat Controller</h4>
+
+<p>Untuk membuat sebuah kelas controller baru, dapat dilakukan menggunakan command <code class="highlighter-rouge">php artisan</code>. Buka command prompt anda, kemudian ketikan perintah berikut ini, untuk membuat sebuah controller baru dengan nama <code class="highlighter-rouge">UserController</code></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">php</span> <span class="nx">artisan</span> <span class="nx">make</span><span class="o">:</span><span class="nx">controller</span> <span class="nx">UserController</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>maka secara otomatis muncul file baru di dalam folder <code class="highlighter-rouge">app/Http/Controller</code> dengan nama <code class="highlighter-rouge">UserController</code>  yang isinya sebagai berikut :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?php</span>
+
+<span class="kn">namespace</span> <span class="nn">App\Http\Controllers</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nn">Illuminate\Http\Request</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">UserController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<span class="p">{</span>
+    <span class="c1">//</span>
+<span class="p">}</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Saya akan coba membuat sebuah metode yang nantinya akan mengembalikan halaman <code class="highlighter-rouge">welcome</code> default Laravel, seperti berikut ini</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?php</span>
+
+<span class="kn">namespace</span> <span class="nn">App\Http\Controllers</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nn">Illuminate\Http\Request</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">UserController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<span class="p">{</span>
+    <span class="k">function</span> <span class="nf">show</span><span class="p">()</span> <span class="p">{</span>
+    	<span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">'welcome'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Kemudian edit file <code class="highlighter-rouge">app/routes/web.php</code> menjadi berikut :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="s1">'UserController@show'</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>ketika kita membuka halaman <code class="highlighter-rouge">http://localhost:8000</code> maka secara otomatis muncul halaman default awal Laravel.
+Jika kita ingin membuat folder di dalam folder <code class="highlighter-rouge">app/Http/Controller</code> misalkan saja, folder <code class="highlighter-rouge">User</code>, maka settingan <code class="highlighter-rouge">Routes</code> akan menjadi seperti berikut ini :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="s1">'User\UserController@show'</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+:ET

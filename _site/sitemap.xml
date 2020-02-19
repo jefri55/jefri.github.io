@@ -41,7 +41,7 @@
 <lastmod>2018-06-12T00:00:00+07:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/first-mass-produced/</loc>
+<loc>http://localhost:4000/laravel-controller/</loc>
 <lastmod>2018-06-12T00:00:00+07:00</lastmod>
 </url>
 <url>
@@ -85,6 +85,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/category/tutorial-laravel-6/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/category/laravel-6-controller/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/category/installasi-laravel-6/</loc>

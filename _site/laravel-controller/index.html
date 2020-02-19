@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="/assets/images/logo.png">
+
+<title>Laravel 6 - Controller #4 | JBlog</title>
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Laravel 6 - Controller #4 | JBlog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Laravel 6 - Controller #4" />
+<meta name="author" content="Jefri" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Controller adalah sebuah kelas yang fungsinya untuk menghandle permintaan-permintaan yang dilakukan oleh user dengan data yang akan ditampilkan dari database, dan juga mengatur halaman apa yang akan ditampilkan." />
+<meta property="og:description" content="Controller adalah sebuah kelas yang fungsinya untuk menghandle permintaan-permintaan yang dilakukan oleh user dengan data yang akan ditampilkan dari database, dan juga mengatur halaman apa yang akan ditampilkan." />
+<link rel="canonical" href="http://localhost:4000/laravel-controller/" />
+<meta property="og:url" content="http://localhost:4000/laravel-controller/" />
+<meta property="og:site_name" content="JBlog" />
+<meta property="og:image" content="http://localhost:4000/assets/images/logo-laravel.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-06-12T00:00:00+07:00" />
+<script type="application/ld+json">
+{"description":"Controller adalah sebuah kelas yang fungsinya untuk menghandle permintaan-permintaan yang dilakukan oleh user dengan data yang akan ditampilkan dari database, dan juga mengatur halaman apa yang akan ditampilkan.","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"Jefri"},"@type":"BlogPosting","headline":"Laravel 6 - Controller #4","dateModified":"2018-06-12T00:00:00+07:00","datePublished":"2018-06-12T00:00:00+07:00","image":"http://localhost:4000/assets/images/logo-laravel.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/laravel-controller/"},"url":"http://localhost:4000/laravel-controller/","author":{"@type":"Person","name":"Jefri"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+
+<link href="/assets/css/main.css" rel="stylesheet">
+
+<script src="/assets/js/jquery.min.js"></script>
+
+</head>
+
+
+<body class="layout-post">
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	</noscript>
+
+
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+    <div class="container pr-0">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+
+        <!-- Begin Menu -->
+
+            <ul class="navbar-nav ml-auto">
+
+                
+                <li class="nav-item">
+                
+                    <a class="nav-link" href="">Home</a>
+                </li>
+
+                <script src="/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+            </ul>
+
+        <!-- End Menu -->
+
+    </div>
+
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+
+<div class="site-content">
+
+<div class="container">
+
+    <!-- Content
+    ================================================== -->
+    <div class="main-content">
+        <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Laravel 6 - Controller #4&url=http://localhost:4000/laravel-controller/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://localhost:4000/laravel-controller/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/laravel-controller/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+                <!-- Post Title -->
+                <h1 class="posttitle">Laravel 6 - Controller #4</h1>
+            </div>
+
+            <!-- Post Featured Image -->
+            
+                
+                <img class="featured-image img-fluid" src="/assets/images/logo-laravel.jpg" alt="Laravel 6 - Controller #4">
+            
+
+            
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                
+                <!-- End Toc -->
+                <p>Controller adalah sebuah kelas yang fungsinya untuk menghandle permintaan-permintaan yang dilakukan oleh user dengan data yang akan ditampilkan dari database, dan juga mengatur halaman apa yang akan ditampilkan.</p>
+
+<h4 id="membuat-controller">Membuat Controller</h4>
+
+<p>Untuk membuat sebuah kelas controller baru, dapat dilakukan menggunakan command <code class="highlighter-rouge">php artisan</code>. Buka command prompt anda, kemudian ketikan perintah berikut ini, untuk membuat sebuah controller baru dengan nama <code class="highlighter-rouge">UserController</code></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">php</span> <span class="nx">artisan</span> <span class="nx">make</span><span class="o">:</span><span class="nx">controller</span> <span class="nx">UserController</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>maka secara otomatis muncul file baru di dalam folder <code class="highlighter-rouge">app/Http/Controller</code> dengan nama <code class="highlighter-rouge">UserController</code>  yang isinya sebagai berikut :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?php</span>
+
+<span class="kn">namespace</span> <span class="nn">App\Http\Controllers</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nn">Illuminate\Http\Request</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">UserController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<span class="p">{</span>
+    <span class="c1">//</span>
+<span class="p">}</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Saya akan coba membuat sebuah metode yang nantinya akan mengembalikan halaman <code class="highlighter-rouge">welcome</code> default Laravel, seperti berikut ini</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?php</span>
+
+<span class="kn">namespace</span> <span class="nn">App\Http\Controllers</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nn">Illuminate\Http\Request</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">UserController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<span class="p">{</span>
+    <span class="k">function</span> <span class="nf">show</span><span class="p">()</span> <span class="p">{</span>
+    	<span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">'welcome'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Kemudian edit file <code class="highlighter-rouge">app/routes/web.php</code> menjadi berikut :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="s1">'UserController@show'</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>ketika kita membuka halaman <code class="highlighter-rouge">http://localhost:8000</code> maka secara otomatis muncul halaman default awal Laravel.
+Jika kita ingin membuat folder di dalam folder <code class="highlighter-rouge">app/Http/Controller</code> misalkan saja, folder <code class="highlighter-rouge">User</code>, maka settingan <code class="highlighter-rouge">Routes</code> akan menjadi seperti berikut ini :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="s1">'User\UserController@show'</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="single-action-controller">Single Action Controller</h4>
+
+<p>Jika kita ingin membuat sebuah controller, yang isinya hanya memiliki 1 buah fungsi atau methode saja kita dapat membuat menambahkan <code class="highlighter-rouge">__invoke</code> di dalam kelas controller tersebut. <code class="highlighter-rouge">Single Action Controller</code> biasa digunakan untuk mempermudah dalam melakukan maintenance program, atau melakukan perubahan di sebuah controller, misalkan saja controller yang kita buat berisi ribuan line program.</p>
+
+<p>Untuk membuat controller baru, dengan metode <code class="highlighter-rouge">__invoke</code> otomatis didalamnya, dapat dilakukan dengan cara menambahkan perintah <code class="highlighter-rouge">--invokable</code> di command php artisan seperti berikut ini :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">php</span> <span class="nx">artisan</span> <span class="nx">make</span><span class="o">:</span><span class="nx">controller</span> <span class="nx">UserController</span> <span class="o">--</span><span class="nx">invokable</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Sedangkan untuk settingan <code class="highlighter-rouge">app/routes/web.php</code> akan menjadi seperti berikut ini :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="s1">'UserController'</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="resource-controllers">Resource Controllers</h4>
+
+
+            </div>
+
+            <!-- Rating -->
+            
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2018-06-12">12 Jun 2018</time></span>           
+                
+                </small>
+            </p>
+
+            <!-- Post Categories -->
+            <div class="after-post-cats">
+                <ul class="tags mb-4">
+                    
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Laravel">Laravel</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Laravel-6">Laravel 6</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Laravel-6-Controller">Laravel 6 Controller</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Tutorial-Laravel-6">Tutorial Laravel 6</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- End Categories -->
+
+            <!-- Post Tags -->
+            <div class="after-post-tags">
+                <ul class="tags">
+                    
+                    
+                </ul>
+            </div>
+            <!-- End Tags -->
+
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="//education/"> &laquo; Education must also train one for quick, resolute and effective thinking.</a>
+            
+            
+            <a class="next d-block col-md-6 text-lg-right" href="//pengenalan-laravel/">Laravel 6 - Pengenalan dan Installasi #1 &raquo; </a>
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+    </div>
+
+    <br />
+    </div>
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts
+================================================== -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script src="/assets/js/mediumish.js"></script>
+
+
+
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script> 
+
+
+<script id="dsq-count-scr" src="//.disqus.com/count.js"></script>
+
+
+</body>
+</html>

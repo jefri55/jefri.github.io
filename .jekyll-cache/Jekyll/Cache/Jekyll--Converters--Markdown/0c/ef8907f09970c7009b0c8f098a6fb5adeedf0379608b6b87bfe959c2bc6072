@@ -1,0 +1,11 @@
+I"<p>Controller adalah sebuah kelas yang fungsinya untuk menghandle permintaan-permintaan yang dilakukan oleh user dengan data yang akan ditampilkan dari database, dan juga mengatur halaman apa yang akan ditampilkan.</p>
+
+<h4 id="membuat-controller">Membuat Controller</h4>
+
+<p>Untuk membuat sebuah kelas controller baru, dapat dilakukan menggunakan command <code class="highlighter-rouge">php artisan</code>. Buka command prompt anda, kemudian ketikan perintah berikut ini, untuk membuat sebuah controller baru dengan nama <code class="highlighter-rouge">UserController</code></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">php</span> <span class="nx">artisan</span> <span class="nx">make</span><span class="o">:</span><span class="nx">controller</span> <span class="nx">UserController</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+:ET
